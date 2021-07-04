@@ -7,10 +7,6 @@
     <title>Document</title>
 </head>
 <body>
-    {% for i in contests.result %}
-        {% if 'Div. 3' in i.name %}
-            <p>{{ i.name }} | {{ i.type }}</p>
-        {% endif %}
-    {% endfor %}
+    <a href="{{ contest.url }}">{{ contest.name }}</a>
 </body>
 </html>
