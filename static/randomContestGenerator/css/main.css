@@ -1,0 +1,22 @@
+.btn {
+  text-align: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  transition: all .3s; }
+  .btn:link, .btn:visited {
+    background-color: orange;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    border-radius: 3px; }
+  .btn:hover {
+    transform: translateY(-10px), scale(1.2);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3); }
+  .btn:active {
+    transform: translateY(0), scale(1);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3); }
+
+/*# sourceMappingURL=main.css.map */
