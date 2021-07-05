@@ -7,6 +7,10 @@ from . import services
 class Index(TemplateView):
     template_name = 'base.html'
 
+
+class RandomContest(TemplateView):
+    template_name = 'base.html'
+
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         contest = services.GrabingJSON()
