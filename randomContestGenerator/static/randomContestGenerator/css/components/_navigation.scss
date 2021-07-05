@@ -1,7 +1,8 @@
 .navigation {
     position: fixed;
     right: 6.0rem;
-    top: 40%;
+    top: 29.5vh;
+    transform: translateY(50%);
 
     &__checkbox {
         display: none;

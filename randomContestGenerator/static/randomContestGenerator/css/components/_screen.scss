@@ -1,0 +1,13 @@
+.screen {
+    height: 30vh;
+    width: 95vw;
+    display: block;
+    border: .5rem solid $color-primary-200;
+    border-radius: 3px;
+    margin-bottom: 7rem;
+    &__heading {
+        color: $color-primary-200;
+        text-align: center;
+        margin-top: 2rem;
+    }
+}

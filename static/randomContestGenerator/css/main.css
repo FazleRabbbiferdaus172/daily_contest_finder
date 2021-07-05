@@ -16,7 +16,8 @@ body {
 .navigation {
   position: fixed;
   right: 6.0rem;
-  top: 40%; }
+  top: 29.5vh;
+  transform: translateY(50%); }
   .navigation__checkbox {
     display: none; }
   .navigation__list {
@@ -93,23 +94,55 @@ body {
 
 .btn {
   text-align: center;
-  position: fixed;
+  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3);
-  transition: all .3s; }
+  box-shadow: 0 0.5rem 1rem rgba(124, 255, 203, 0.3);
+  transition: all .3s;
+  font-size: 2rem; }
   .btn:link, .btn:visited {
-    background-color: orange;
+    background-color: #64DEAD;
     color: white;
     padding: 1.5rem 2.0rem;
     text-decoration: none;
     border-radius: .3rem; }
   .btn:hover {
-    transform: translateY(-1rem), scale(1.2);
-    box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3); }
+    transform: translateY(-2rem), scale(1.5);
+    box-shadow: 0 1rem 1.5rem rgba(124, 255, 203, 0.3); }
   .btn:active {
     transform: translateY(0), scale(1);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.3); }
+    box-shadow: 0 0.5rem 1rem rgba(124, 255, 203, 0.3); }
+
+.screen {
+  height: 30vh;
+  width: 95vw;
+  display: block;
+  border: 0.5rem solid #64DEAD;
+  border-radius: 3px;
+  margin-bottom: 7rem; }
+  .screen__heading {
+    color: #64DEAD;
+    text-align: center;
+    margin-top: 2rem; }
+
+.randomcontest {
+  height: 50vh;
+  width: 95vw;
+  display: block;
+  border: 0.5rem solid #64DEAD;
+  border-radius: 3px; }
+  .randomcontest__heading {
+    margin-top: 4rem;
+    color: #64DEAD;
+    text-align: center; }
+  .randomcontest__link {
+    color: #64DEAD;
+    text-align: center;
+    font-size: 6rem; }
+  .randomcontest__generator {
+    margin-top: 6rem;
+    text-align: center;
+    position: relative; }
 
 /*# sourceMappingURL=main.css.map */

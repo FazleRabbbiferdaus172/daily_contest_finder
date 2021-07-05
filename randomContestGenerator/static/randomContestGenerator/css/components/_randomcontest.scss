@@ -1,0 +1,25 @@
+.randomcontest {
+    height: 50vh;
+    width: 95vw;
+    display: block;
+    border: .5rem solid $color-primary-200;
+    border-radius: 3px;
+    &__heading {
+        margin-top: 4rem;
+        color: $color-primary-200;
+        text-align: center;
+    }
+
+    &__link {
+
+        color: $color-primary-200;
+        text-align: center;
+        font-size: 6rem;
+    }
+
+    &__generator {
+        margin-top: 6rem;
+        text-align: center;
+        position: relative;
+    }
+}

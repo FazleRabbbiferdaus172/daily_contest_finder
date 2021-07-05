@@ -17,21 +17,21 @@
         <div class="navigation__background"></div>
         <nav class="navigation__nav">
             <ul class="navigation__list">
-                <li class="navigation__item"><a href="#" class="navigation__link">Random Contest</a></li>
+                <li class="navigation__item"><a href="{% url 'randomcontest' %}" class="navigation__link">Random Contest</a></li>
                 <li class="navigation__item"><a href="#" class="navigation__link">Daily practice</a></li>
             </ul>
         </nav>
     </div>
 
     <div class="screen">
-        {% block screen %}
-        {% endblock %}
+        <div class="screen__heading">
+            <h1 class="u-heading-primary">FEED ME</h1>
+        </div>
     </div>
 
-    <div class="randomcontest">
-        {% block randomContest %}
-        {% endblock %}
-    </div>
+    
+    {% block randomContest %}
+    {% endblock %}
 
     <div class="dailypractice">
         {% block dailyPractice %}
