@@ -1,6 +1,11 @@
 .navigation {
     position: fixed;
     right: 100px;
+    top: 40%;
+
+    &__checkbox {
+        display: none;
+    }
 
     &__list {
         list-style: none;
@@ -8,6 +13,7 @@
         background-color: $color-primary-300;
         padding: 10px 25px 10px 20px;
         border-radius: 3px;
+        cursor: pointer;
     }
 
     &__item {
@@ -23,11 +29,13 @@
         border-radius: 50%;
         z-index: 100;
         right: -50px;
-        top: 30px;
+        top: 10px;
     }
 
     &__nav {
-
+        transform: translateX(200px) scaleX(0);
+        opacity: 0;
+        transition: all .8s;
     }
 
     &__link {
@@ -52,7 +60,10 @@
         &:active {
             transform: rotate(5deg) scale(.9);
         }
+    }
 
-
+    &__checkbox:checked ~ &__nav {
+        transform: translateX(0) scaleX(1);
+        opacity: 1;
     }
 }
