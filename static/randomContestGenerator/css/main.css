@@ -120,11 +120,27 @@ body {
   display: block;
   border: 0.5rem solid #64DEAD;
   border-radius: 3px;
-  margin-bottom: 7rem; }
+  margin-bottom: 7rem;
+  position: relative; }
   .screen__heading {
     color: #64DEAD;
     text-align: center;
     margin-top: 2rem; }
+  .screen__ful {
+    position: absolute;
+    top: 0;
+    left: 30%;
+    transform: translate(-50%, -5%);
+    background: url(../images/ful_sprite.png) 0 0 no-repeat;
+    animation: flowerMove 4s steps(5) infinite;
+    height: 200px;
+    width: 200px; }
+
+@keyframes flowerMove {
+  0% {
+    background-position: 0 0; }
+  100% {
+    background-position: 0 -1000px; } }
 
 .randomcontest {
   height: 50vh;
