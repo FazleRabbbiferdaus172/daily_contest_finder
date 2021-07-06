@@ -11,8 +11,15 @@ class Index(TemplateView):
 class RandomContest(TemplateView):
     template_name = 'randomContest.html'
 
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     contest = services.GrabingJSON()
-    #     context['contest'] = contest.grabContest('3')
-    #     return context
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['contest'] = {
+            'url': "#", 'name': "Generate Todays Contest"}
+        return context
+
+
+def generate_random_contest(request):
+    if request.method == "GET":
+        contest = services.GrabingJSON()
+        context = {'contest': contest.grabContest('3')}
+        return render(request, "randomContest.html", context=context)

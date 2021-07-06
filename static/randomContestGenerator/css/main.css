@@ -139,7 +139,9 @@ body {
   .randomcontest__link {
     color: #64DEAD;
     text-align: center;
-    font-size: 6rem; }
+    font-size: 3rem;
+    margin-top: 2rem;
+    overflow: hidden; }
   .randomcontest__generator {
     margin-top: 6rem;
     text-align: center;

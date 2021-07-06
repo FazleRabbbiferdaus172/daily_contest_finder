@@ -15,10 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from randomContestGenerator.views import Index, RandomContest
+from randomContestGenerator.views import Index, RandomContest, generate_random_contest
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', Index.as_view(), name='index'),
     url(r'^randomcontest', RandomContest.as_view(), name='randomcontest'),
+    url(r'^generate_random_contest', generate_random_contest,
+        name='generate_random_contest'),
 ]

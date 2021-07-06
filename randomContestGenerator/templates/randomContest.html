@@ -7,11 +7,11 @@
     </div>
     <div class="randomcontest__link">
         <h1 class="randomcontest__link-text">
-             contest 
+             {{ contest.name }}
         </h1>
     </div>
     <div class="randomcontest__generator">
-        <a href="" class="btn">Generate Random contest</a>
+        <a href="{% url 'generate_random_contest' %}" class="btn">Generate Random contest</a>
     </div>
 </div>
 {% endblock %}
