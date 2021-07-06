@@ -32,13 +32,13 @@ body {
     margin-right: 1.5rem; }
   .navigation__button {
     position: absolute;
-    height: 8.0rem;
+    height: 7.0rem;
     width: 8.0rem;
     background-color: #033F63;
-    border-radius: 50%;
+    border-radius: 10px;
     z-index: 100;
     right: -5.0rem;
-    top: -.55rem;
+    top: -.1rem;
     text-align: center; }
   .navigation__nav {
     transform: translateX(20rem) scaleX(0);
@@ -64,7 +64,7 @@ body {
     opacity: 1; }
   .navigation__icon {
     position: relative;
-    margin-top: 4rem; }
+    margin-top: 3.5rem; }
     .navigation__icon, .navigation__icon::before, .navigation__icon::after {
       width: 3rem;
       height: 2px;
@@ -129,10 +129,10 @@ body {
   .screen__ful {
     position: absolute;
     top: 0;
-    left: 30%;
+    left: 50%;
     transform: translate(-50%, -5%);
-    background: url(../images/ful_sprite.png) 0 0 no-repeat;
-    animation: flowerMove 4s steps(5) infinite;
+    background: url(../images/narwal.png) 0 0 no-repeat;
+    animation: flowerMove 1s steps(12) infinite;
     height: 200px;
     width: 200px; }
 
@@ -140,7 +140,7 @@ body {
   0% {
     background-position: 0 0; }
   100% {
-    background-position: 0 -1000px; } }
+    background-position: 0 -2400px; } }
 
 .randomcontest {
   height: 50vh;

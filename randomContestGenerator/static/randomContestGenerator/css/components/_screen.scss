@@ -15,13 +15,12 @@
     &__ful{
         position: absolute;
         top: 0;
-        left: 30%;
+        left: 50%;
         transform: translate(-50%,-5%);
-        background: url(../images/ful_sprite.png) 0 0 no-repeat;
-        animation: flowerMove 4s steps(5) infinite;
+        background: url(../images/narwal.png) 0 0 no-repeat;
+        animation: flowerMove 1s steps(12) infinite;
         height: 200px;
         width: 200px;
-        // margin: 100px auto 0;
     }
 }
 
@@ -29,9 +28,10 @@
 @keyframes flowerMove {
     0% {
         background-position: 0 0;
+        
     }
 
     100% {
-        background-position: 0 -1000px;
+        background-position: 0 -2400px;
     }
 }
