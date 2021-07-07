@@ -6,12 +6,35 @@
         <h1>DO YOUR BEST!!!</h1>
     </div>
     <div class="randomcontest__link">
-        <h1 class="randomcontest__link-text">
+        <a href="{{ contest.url }}" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
              {{ contest.name }}
-        </h1>
+        </h1></a>
     </div>
     <div class="randomcontest__generator">
-        <a href="{% url 'generate_random_contest' %}" class="btn">Generate Random contest</a>
+        <form action="{% url 'generate_random_contest' %}" method="POST" class="form">
+            {% csrf_token %}
+            <div class="form__group">
+                <div class="form__radio-group">
+                    <input type="radio" class="form__radio-input" id="div1" name="size" value="1" required>
+                    <label for="div1" class="form__radio-label">
+                        <span class="form__radio-button"></span>
+                        Div.1</label>
+                    <input type="radio" class="form__radio-input" id="div2" name="size" value="2" required>
+                    <label for="div2" class="form__radio-label">
+                        <span class="form__radio-button"></span>
+                        Div.2</label>
+                    <input type="radio" class="form__radio-input" id="div3" name="size" value="3" required>
+                    <label for="div3" class="form__radio-label">
+                        <span class="form__radio-button"></span>
+                        div.3</label>
+                </div>
+                <div class="form__button-submit">
+                    <input type="submit" class="btn" value="Generate Random contest">
+                </div>
+                
+            </div>
+        </form>
+        <!-- <a href="{% url 'generate_random_contest' %}" class="btn">Generate Random contest</a> -->
     </div>
 </div>
 {% endblock %}

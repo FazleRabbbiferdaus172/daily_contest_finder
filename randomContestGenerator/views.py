@@ -24,17 +24,20 @@ class RandomContest(TemplateView):
 
 def generate_random_contest(request):
     global state
-    if request.method == "GET":
+    if request.method == "POST":
         contest = services.GrabingJSON()
-
+        contest_type = request.POST.get('size')
+        print(type(contest_type))
+        if not contest_type:
+            contest_type = '3'
         if state['status'] or contest.has_participated(handle='fazle_rabbi_ferdaus', contest_id=state['id']):
-            context = {'contest': contest.grabContest('3')}
+            context = {'contest': contest.grabContest(contest_type)}
             state['id'] = context['contest']['id']
             state['url'] = context['contest']['url']
             state['name'] = context['contest']['name']
             state['status'] = contest.has_participated(
                 handle='fazle_rabbi_ferdaus', contest_id=state['id'])
-            print(state)
+            # print(state)
 
         else:
             context = {'contest': {
