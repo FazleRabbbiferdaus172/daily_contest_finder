@@ -20,6 +20,16 @@ class GrabingJSON:
             'url': "https://codeforces.com/contestRegistration/{}/virtual/true".format(temp[0]), 'name': temp[1], 'id': temp[0]}
         return contest
 
+    def grabAllcontest(self, t='3'):
+        contest_type = 'Div. ' + t
+        all = []
+        for i in self.resposeJSON['result']:
+            if contest_type in i['name'] and i['phase'] == "FINISHED":
+                all.append(
+                    {'url': 'https://codeforces.com/contest/{}'.format(i['id']), 'name': i['name']})
+        # print(all)
+        return all
+
     def has_participated(self, handle='', contest_id=''):
         if not contest_id:
             return True
@@ -30,3 +40,6 @@ class GrabingJSON:
             return True
         else:
             return False
+
+
+#temp = GrabingJSON().grabAllcontest()

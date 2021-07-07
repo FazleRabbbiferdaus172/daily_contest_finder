@@ -22,6 +22,17 @@ class RandomContest(TemplateView):
         return context
 
 
+class Allcontest(TemplateView):
+    template_name = 'allcontest.html'
+
+    def get_context_data(self, **kwargs):
+        global state
+        context = super().get_context_data(**kwargs)
+        contest = services.GrabingJSON()
+        context['contest'] = contest.grabAllcontest()
+        return context
+
+
 def generate_random_contest(request):
     global state
     if request.method == "POST":
