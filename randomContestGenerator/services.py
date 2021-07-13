@@ -34,11 +34,15 @@ class GrabingJSON:
         # print(all)
         return all
 
-    def grabCustomeProblemSet(self, number, dif_choice, tags):
+    def grabCustomeProblemSet(self, number="", dif_choice="", tags=""):
         api_url = 'https://codeforces.com/api/problemset.problems'
         all = []
         problem_set_responseJSON = participated_resposeJSON = requests.get(
             api_url).json()
+        c = 0
+        for i in problem_set_responseJSON['result']['problems']:
+            all.append({'url': 'https://codeforces.com/problemset/problem/{}/{}'.format(
+                i["contestId"], i["index"]), 'name': i['name']})
         return all
 
     def has_participated(self, handle='', contest_id=''):
@@ -53,4 +57,4 @@ class GrabingJSON:
             return False
 
 
-#temp = GrabingJSON().grabAllcontest()
+#temp = GrabingJSON().grabCustomeProblemSet()

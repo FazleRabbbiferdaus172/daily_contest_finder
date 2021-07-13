@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block dailyPractice %}
+{% for i in problems %}
+<a href="{{ i.url }}" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
+    {{ i.name }}
+</h1></a>
+{% endfor %}
+{% endblock %}

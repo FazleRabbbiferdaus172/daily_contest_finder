@@ -33,6 +33,16 @@ class Allcontest(TemplateView):
         return context
 
 
+class CustomeProblems(TemplateView):
+    template_name = 'customeproblems.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        contest = services.GrabingJSON()
+        context['problems'] = contest.grabCustomeProblemSet()
+        return context
+
+
 def generate_random_contest(request):
     global state
     if request.method == "POST":
