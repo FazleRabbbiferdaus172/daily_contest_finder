@@ -3,7 +3,7 @@
 {% block dailyPractice %}
 <div id="dailyPractice" class="dailypractice">
 
-    <div class="dailyractice__generator">
+    <div v-if="state==='False'" class="dailyractice__generator">
         <!-- <form action="{% url 'generate_random_contest' %}" method="POST" class="form"> -->
         <form action="{% url 'generate_custome_contest' %}" method="POST" class="form" id="custome_contest_form">
             {% csrf_token %}
@@ -29,7 +29,7 @@
         </form>
     </div>
 
-    <div>
+    <div v-if="state==='True'">
         <!-- <h1 v-if="state==='Hungry'"> Oh! IF works</h1>
         <h1 v-else> [[ state ]] </h1>
         <a href="#" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
@@ -49,7 +49,7 @@
         el: '#dailyPractice',
         data: {
             text: 'Hello Tacoface!',
-            state: '{{ state.name }}',
+            state: '{{ state }}' ,
             number: 3
         }
     });

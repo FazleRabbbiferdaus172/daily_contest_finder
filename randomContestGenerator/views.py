@@ -1,6 +1,8 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, render, render_to_response
 from django.views.generic import TemplateView
 from . import services
+from django.shortcuts import HttpResponseRedirect
+from django.urls import reverse
 # Create your views here.
 
 state = {'id': '', 'url': '#',
@@ -69,6 +71,7 @@ def generate_random_contest(request):
 
 
 def generate_custome_contest(request):
+    context = {'problems': [], 'state': False}
     if request.method == "POST":
         problemset_finder = services.GrabingJSON()
         num = int(request.POST.get('num'))
