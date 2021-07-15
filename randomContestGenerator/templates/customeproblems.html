@@ -1,22 +1,25 @@
 {% extends 'base.html' %}
 
 {% block dailyPractice %}
-<div id="dailyPractice">
+<div id="dailyPractice" class="dailypractice">
 
-    <div>
+    <div class="dailyractice__generator">
         <!-- <form action="{% url 'generate_random_contest' %}" method="POST" class="form"> -->
-        <form action="{% url 'generate_custome_contest' %}" method="POST" class="form" name="custome_contest_form">
+        <form action="{% url 'generate_custome_contest' %}" method="POST" class="form" id="custome_contest_form">
             {% csrf_token %}
-            <input v-model="number" type="number" name="" id="num">
-            <label for="num" class="forlabel__text">Enter number of problems</label>
+            <div class="dailyractice__input">
+                <label for="num" class="dailyractice__input-label">Enter number of problems</label>
+                <input v-model="number" type="number" min="1" max="99" name="num" id="num" class="dailyractice__input-box">
+            </div>
+
             <!-- <h1 v-for="n in parseInt(number)" :key="n">[[ n ]]</h1> -->
-            <div v-for="n in parseInt(number)" :key="n">
-                <label :for="n" class="forlabel__text">[[ n ]]</label>
-                <select name="1" :id="n">
-                <option value="A">A</option>
-                <option value="B">B</option>
-                <option value="C">C</option>
-                <option value="D">D</option>
+            <div v-for="n in parseInt(number)" :key="n" class="dailyractice__index">
+                <label :for="n" class="dailyractice__index-label" >[[ n ]]</label>
+                <select :name="n" :id="n">
+                <option value="A" class="dailyractice__index-option">A</option>
+                <option value="B" class="dailyractice__index-option">B</option>
+                <option value="C" class="dailyractice__index-option">C</option>
+                <option value="D" class="dailyractice__index-option">D</option>
                 </select>
             </div>
 
