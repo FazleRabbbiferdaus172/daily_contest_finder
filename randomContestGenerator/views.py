@@ -66,3 +66,14 @@ def generate_random_contest(request):
                 'url': state['url'], 'name': state['name'], 'id': state['id']}}
 
         return render(request, "randomContest.html", context=context)
+
+
+def generate_custome_contest(request):
+    if request.method == "POST":
+        contest = services.GrabingJSON()
+        contest_type = request.POST.get('custome_contest_form')
+        print("custome_contest_form")
+        print(contest_type)
+
+        context = {'state': state}
+        return render(request, "customeproblems.html", context=context)
