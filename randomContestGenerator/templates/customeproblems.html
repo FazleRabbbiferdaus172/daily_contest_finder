@@ -1,9 +1,26 @@
 {% extends 'base.html' %}
 
 {% block dailyPractice %}
-{% for i in problems %}
-<a href="{{ i.url }}" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
-    {{ i.name }}
-</h1></a>
-{% endfor %}
+<div id="dailyPractice">
+    <h1 v-if="state==='Hungry'"> Oh! IF works</h1>
+    <h1 v-else> Oh! Else work</h1>
+    <a href="#" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
+        [[ text ]]
+    </h1></a>
+    {% for i in problems %}
+    <a href="{{ i.url }}" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
+        {{ i.name }}
+    </h1></a>
+    {% endfor %}
+</div>
+<script>
+    new Vue({
+        delimiters: ["[[","]]"],
+        el: '#dailyPractice',
+        data: {
+            text: 'Hello Tacoface!',
+            state: 'not Hungry'
+        }
+    });
+</script>
 {% endblock %}
