@@ -39,8 +39,8 @@ class CustomeProblems(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         contest = services.GrabingJSON()
-        context['problems'] = contest.grabCustomeProblemSet()
-        context['state'] = state
+        context['problems'] = [{'url': "#", 'name': ""}]
+        context['state'] = False
         return context
 
 
@@ -78,5 +78,5 @@ def generate_custome_contest(request):
             index.append(request.POST.get(str(i)))
         print(*index)
         problem_set = problemset_finder.grabCustomeProblemSet(num, index)
-        context = {'state': state}
+        context = {'problems': problem_set, 'state': True}
         return render(request, "customeproblems.html", context=context)
