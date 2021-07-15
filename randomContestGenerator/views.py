@@ -40,6 +40,7 @@ class CustomeProblems(TemplateView):
         context = super().get_context_data(**kwargs)
         contest = services.GrabingJSON()
         context['problems'] = contest.grabCustomeProblemSet()
+        context['state'] = state
         return context
 
 

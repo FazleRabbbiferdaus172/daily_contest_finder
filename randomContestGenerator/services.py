@@ -1,6 +1,7 @@
 import requests
 import json
 import random
+from django.core import serializers
 
 
 class GrabingJSON:
@@ -32,9 +33,10 @@ class GrabingJSON:
                 all.append(
                     {'url': 'https://codeforces.com/contest/{}'.format(i['id']), 'name': i['name']})
         # print(all)
+
         return all
 
-    def grabCustomeProblemSet(self, number="", dif_choice="", tags=""):
+    def grabCustomeProblemSet(self, number=5, dif_choice="", tags=""):
         api_url = 'https://codeforces.com/api/problemset.problems'
         all = []
         problem_set_responseJSON = participated_resposeJSON = requests.get(
@@ -43,7 +45,8 @@ class GrabingJSON:
         for i in problem_set_responseJSON['result']['problems']:
             all.append({'url': 'https://codeforces.com/problemset/problem/{}/{}'.format(
                 i["contestId"], i["index"]), 'name': i['name']})
-        return all
+        random.shuffle(all)
+        return all[:number]
 
     def has_participated(self, handle='', contest_id=''):
         if not contest_id:

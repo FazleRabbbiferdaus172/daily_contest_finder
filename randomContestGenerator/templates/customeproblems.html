@@ -2,16 +2,41 @@
 
 {% block dailyPractice %}
 <div id="dailyPractice">
-    <h1 v-if="state==='Hungry'"> Oh! IF works</h1>
-    <h1 v-else> Oh! Else work</h1>
-    <a href="#" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
-        [[ text ]]
-    </h1></a>
-    {% for i in problems %}
-    <a href="{{ i.url }}" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
-        {{ i.name }}
-    </h1></a>
-    {% endfor %}
+
+    <div>
+        <!-- <form action="{% url 'generate_random_contest' %}" method="POST" class="form"> -->
+        <form action="" method="POST" class="form">
+            {% csrf_token %}
+            <input v-model="number" type="number" name="" id="num">
+            <label for="num" class="forlabel__text">Enter number of problems</label>
+            <!-- <h1 v-for="n in parseInt(number)" :key="n">[[ n ]]</h1> -->
+            <div v-for="n in parseInt(number)" :key="n">
+                <label :for="n" class="forlabel__text">[[ n ]]</label>
+                <select name="1" :id="n">
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+                </select>
+            </div>
+
+
+        </form>
+    </div>
+
+    <div>
+        <h1 v-if="state==='Hungry'"> Oh! IF works</h1>
+        <h1 v-else> [[ state ]] </h1>
+        <a href="#" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
+            [[ text ]]
+        </h1></a>
+        {% for i in problems %}
+        <a href="{{ i.url }}" class="randomcontest__link-heading"><h1 class="randomcontest__link-text">
+            {{ i.name }}
+        </h1></a>
+        {% endfor %}
+    </div>
+
 </div>
 <script>
     new Vue({
@@ -19,7 +44,8 @@
         el: '#dailyPractice',
         data: {
             text: 'Hello Tacoface!',
-            state: 'not Hungry'
+            state: '{{ state.name }}',
+            number: 3
         }
     });
 </script>
