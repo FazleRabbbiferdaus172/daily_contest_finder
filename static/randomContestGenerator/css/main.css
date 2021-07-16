@@ -210,4 +210,51 @@ body {
     .randomcontest .form .form__radio-input:checked + .form__radio-label .form__radio-button::after {
       opacity: 1; }
 
+.dailypractice {
+  width: 95vw;
+  display: block;
+  border: 0.5rem solid #64DEAD;
+  border-radius: 3px;
+  font-size: 2rem;
+  color: #64DEAD; }
+  .dailypractice__generator {
+    margin-top: 2rem;
+    text-align: center; }
+  .dailypractice__input {
+    margin-bottom: 2rem; }
+    .dailypractice__input-label {
+      padding-right: 1.5rem; }
+    .dailypractice__input-box[type=number] {
+      background-color: #7CFFCB;
+      border: none;
+      border-bottom: .3rem transparent solid;
+      color: #033F63;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-radius: 3px; }
+      .dailypractice__input-box[type=number]:focus {
+        outline: none;
+        border-bottom: .3rem green solid; }
+      .dailypractice__input-box[type=number]:focus:invalid {
+        outline: none;
+        border-bottom: .3rem red solid; }
+  .dailypractice__index {
+    margin-bottom: 2rem; }
+    .dailypractice__index-label {
+      padding-right: 1.5rem; }
+    .dailypractice__index-option {
+      background-color: #7CFFCB;
+      border: none;
+      border-bottom: .3rem transparent solid;
+      color: #033F63;
+      text-align: center;
+      padding: 1rem 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 600;
+      border-radius: 3px; }
+  .dailypractice__button {
+    margin-bottom: 2rem; }
+
 /*# sourceMappingURL=main.css.map */
