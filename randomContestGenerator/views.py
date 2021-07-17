@@ -8,6 +8,11 @@ from django.urls import reverse
 state = {'id': '', 'url': '#',
          'name': 'Generate Todays Contest', 'status': False}
 
+problem_state = False
+todays_problem = []
+saved_problem_struct = []
+saved_problem_struct_state = False
+
 
 class Index(TemplateView):
     template_name = 'index.html'
@@ -83,3 +88,7 @@ def generate_custome_contest(request):
         problem_set = problemset_finder.grabCustomeProblemSet(num, index)
         context = {'problems': problem_set, 'state': True}
         return render(request, "customeproblems.html", context=context)
+
+
+def set_custome_problemset_struct(request):
+    pass
