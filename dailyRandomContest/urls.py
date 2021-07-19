@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from randomContestGenerator.views import (
-    Index, RandomContest, generate_random_contest, Allcontest, CustomeProblems, generate_custome_contest)
+    Index, RandomContest, generate_random_contest, Allcontest, CustomeProblems, generate_custome_contest, set_custome_problemset_struct)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -30,4 +30,6 @@ urlpatterns = [
         name='generate_random_contest'),
     url(r'^generate_custome_contest', generate_custome_contest,
         name='generate_custome_contest'),
+    url(r'^set_custome_problemset_struct', set_custome_problemset_struct,
+        name='set_custome_problemset_struct'),
 ]

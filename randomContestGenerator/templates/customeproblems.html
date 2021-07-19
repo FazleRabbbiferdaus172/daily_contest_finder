@@ -31,6 +31,35 @@
         </form>
     </div>
 
+
+    <!-- <div v-if="state==='False'" class="dailypractice__generator">
+        <!-- <form action="{% url 'generate_custome_contest' %}" method="POST" class="form" id="custome_contest_form"> -->
+        <form action="#" method="POST" class="form" id="custome_contest_form">
+            {% csrf_token %}
+            <div class="dailypractice__input">
+                <label for="num" class="dailypractice__input-label">Enter number of problems</label>
+                <input v-model="number" type="number" min="1" max="15" name="num" id="num" class="dailypractice__input-box">
+            </div>
+
+            <!-- <h1 v-for="n in parseInt(number)" :key="n">[[ n ]]</h1> -->
+            <div v-for="n in parseInt(number)" :key="n" class="dailypractice__index">
+                <label :for="n" class="dailypractice__index-label" >Choose index for problem [[ n ]] :</label>
+                <select :name="n" :id="n" class="dailypractice__index-option">
+                <option value="A" class="dailypractice__index-option">A</option>
+                <option value="B" class="dailypractice__index-option">B</option>
+                <option value="C" class="dailypractice__index-option">C</option>
+                <option value="D" class="dailypractice__index-option">D</option>
+                <option value="D" class="dailypractice__index-option">E</option>
+                <option value="D" class="dailypractice__index-option">F</option>
+                </select>
+            </div>
+
+            <div class="form__button-submit dailypractice__button">
+                <input type="submit" class="btn" value="Generate a Custome contest">
+            </div>
+        </form>
+    </div> -->
+
     <div v-if="state==='True'">
         <!-- <h1 v-if="state==='Hungry'"> Oh! IF works</h1>
         <h1 v-else> [[ state ]] </h1>
