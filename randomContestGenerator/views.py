@@ -94,3 +94,11 @@ def set_custome_problemset_struct(request):
     saved_problem_struct_state = True
     saved_problem_struct = list(map(str, range(1, 11)))
     return render(request, "customeproblems.html")
+
+
+def interview_set(request):
+    url = "#"
+    count = 0
+    complete = 0
+    index = []
+    return
