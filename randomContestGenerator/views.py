@@ -93,7 +93,7 @@ def generate_custome_contest(request):
 def set_custome_problemset_struct(request):
     saved_problem_struct_state = True
     saved_problem_struct = list(map(str, range(1, 11)))
-    return render(request, "customeproblems.html")
+    return render(request, "customeproblemdefault.html")
 
 
 def interview_set(request):

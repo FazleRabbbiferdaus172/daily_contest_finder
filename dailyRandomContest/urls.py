@@ -16,7 +16,7 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from randomContestGenerator.views import (
-    Index, RandomContest, generate_random_contest, Allcontest, CustomeProblems, generate_custome_contest, set_custome_problemset_struct)
+    Index, RandomContest, generate_random_contest, Allcontest, CustomeProblems, generate_custome_contest, set_custome_problemset_struct, interview_set)
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block dailyPractice %}
+<div v-if="state==='False'" class="dailypractice__generator">
+
+    <form action="#" method="POST" class="form" id="custome_contest_form">
+        {% csrf_token %}
+        <div class="dailypractice__input">
+            <label for="num" class="dailypractice__input-label">Enter number of problems</label>
+            <input v-model="number" type="number" min="1" max="15" name="num" id="num" class="dailypractice__input-box">
+        </div>
+
+        <div v-for="n in parseInt(number)" :key="n" class="dailypractice__index">
+            <label :for="n" class="dailypractice__index-label" >Choose index for problem [[ n ]] :</label>
+            <select :name="n" :id="n" class="dailypractice__index-option">
+            <option value="A" class="dailypractice__index-option">A</option>
+            <option value="B" class="dailypractice__index-option">B</option>
+            <option value="C" class="dailypractice__index-option">C</option>
+            <option value="D" class="dailypractice__index-option">D</option>
+            <option value="D" class="dailypractice__index-option">E</option>
+            <option value="D" class="dailypractice__index-option">F</option>
+            </select>
+        </div>
+
+        <div class="form__button-submit dailypractice__button">
+            <input type="submit" class="btn" value="Generate a Custome contest">
+        </div>
+    </form>
+</div>
+{% endblock %}
